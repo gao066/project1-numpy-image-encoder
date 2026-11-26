@@ -1,5 +1,7 @@
 # Project 1：用 NumPy 复现 OpenCLIP ViT-B/32 图像编码器
 
+> 代码仓库（公开）：https://github.com/gao066/project1-numpy-image-encoder
+
 本项目完成课程 Project 1 的六组实现任务：在不使用 PyTorch / OpenCLIP 的前提下，仅用 NumPy 复现
 `szu_python_openclip` 最终项目图像塔的完整前向计算，输出与给定参考在 float32 容差内一致。
 
