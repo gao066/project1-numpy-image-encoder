@@ -9,6 +9,19 @@
 - 内部：CLS + 49 个 patch token，共 `[B,50,768]`，经 12 层 Transformer
 - 输出：每张图一个单位长度的 `[B,512]` 向量，即最终项目 `ImageEncoder.__call__` 的返回值
 
+## 运行前必读：两个课程数据文件
+
+本仓库已包含课程 Starter 的**全部源码与脚本**（`check.py`、`helpers.py`、`preprocess_image.py`、`runtime.py`、`run.py`、`transformer_steps.py`、`config.json`、`assets/images`、`lecture-demos` 等），
+但**未上传**下面两个大文件——课程 README 明确要求不要重复提交参数文件与参考数据，且 312 MB 超过 GitHub 单文件 100 MB 的限制：
+
+| 文件 | 大小 | 用途 |
+| --- | --- | --- |
+| `weights/image_encoder.npz` | 312 MB | 152 个视觉张量（模型参数） |
+| `assets/reference_outputs.npz` | 7.4 MB | 分阶段参考中间结果（仅用于比对） |
+
+**获取方法**：从课程平台下载 `project1-学生版.zip`，解压后把这两个文件分别放回 `weights/` 与 `assets/`，
+即可完整运行 `python check.py --stage all` 与 `python run.py --output output_tokens.npz`。
+
 ## 目录结构
 
 ```

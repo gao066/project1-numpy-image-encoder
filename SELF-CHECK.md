@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | 用 NumPy 补全代码，实现从图像提取特征 | 完成 | `image_encoder.py` 六组 TODO，仅用 NumPy |
 | GitHub 地址（可放报告中，需向助教/老师开放） | 完成：https://github.com/gao066/project1-numpy-image-encoder （Public） | 报告 3.3 节、README 顶部、`git log` |
+| 上传整个项目（不只是 image_encoder） | 完成：课程 Starter 全部源码与脚本均已入库 | 仓库根目录 `check.py`/`helpers.py`/`run.py`/`assets`/`lecture-demos` 等 |
 | README 说明功能与结构、源码、依赖、数据获取 | 完成 | `README.md`（目录结构、依赖、运行步骤、权重获取说明） |
 | 保留真实提交记录 | GitHub 上 3 次真实提交 | 仓库 commits 页面 |
 | 实验报告正文 ≤ 5 页 | 完成，正文 4 页（第 3–6 页） | Word 导出 PDF 实测共 7 页：封面、评分表、正文 4 页、批阅页 |
@@ -31,11 +32,11 @@
 | 03 结果与证据：指标、图表、关键输出支持结论 | 表 2 分阶段误差、表 3 鲁棒性、图 1 误差对比、图 2 相似度矩阵 | 报告 4.1–4.3 |
 | 04 分析与反思：解释、局限、改进 | 解释误差来源（BLAS 累加顺序）、两类真实错误、GELU 性能局限与改进方案 | 报告 3.4、4.1、五节 |
 
-## 三、需要本人补充的一项
+## 三、完成状态
 
-1. **指导教师姓名**：报告封面当前为下划线待填。
-
-GitHub 仓库已创建并推送（Public），链接已写入报告 3.3 节与 README，助教/老师可直接访问。
+- 封面「指导教师」已填：舒婷。
+- GitHub 仓库已推送全部源码（Public），链接在报告 3.3 节与 README。
+- 唯一未入库的是两个课程大文件（权重 312 MB、参考 7.4 MB）：课程要求不重复提交，且超过 GitHub 单文件限制；README 顶部已写明获取方法。
 
 > 说明：`weights/image_encoder.npz`（312 MB）与 `assets/reference_outputs.npz`（7.4 MB）
 > 未提交到仓库，需按 README 从课程平台下载原始附件获得。
