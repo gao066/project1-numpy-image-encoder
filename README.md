@@ -25,7 +25,7 @@
 ## 目录结构
 
 ```
-project1-numpy-student/
+project1-numpy-image-encoder/
 ├── image_encoder.py        # 本项目的唯一改动文件（六组 TODO 的实现）
 ├── helpers.py              # 课程提供：LayerNorm、精确 GELU、softmax、单位化
 ├── preprocess_image.py     # 课程提供：短边缩放、中心裁剪、CLIP 归一化
@@ -37,10 +37,12 @@ project1-numpy-student/
 ├── lecture-demos/          # 课程提供：课堂 NumPy 示例
 ├── transformer_steps.py    # 课程提供：迷你 Transformer 逐式计算演示
 ├── requirements.txt        # 依赖清单
-└── evidence/               # 本项目的验证证据
-    ├── check_all.log       # check.py --stage all 的完整输出
-    ├── extra_verify.py     # 额外鲁棒性测试脚本
-    └── debug_variants.py   # 两类典型错误的对照实验脚本
+├── evidence/               # 本项目的验证证据
+│   ├── check_all.log       # check.py --stage all 的完整输出
+│   ├── extra_verify.py     # 额外鲁棒性测试脚本
+│   └── debug_variants.py   # 两类典型错误的对照实验脚本
+├── report/                 # 实验报告：Word 源文件与导出 PDF
+└── practice/               # 课程提供的练习材料（project1_exercises.pdf）
 ```
 
 > 仓库只保留源码、README 与报告。`weights/image_encoder.npz`（312 MB）和
@@ -122,4 +124,5 @@ patch 投影无偏置；图像塔不含 LayerScale，只有两处残差。
 
 ## 实验报告
 
-`report/实验报告-项目1-NumPy图像编码器.docx`（深圳大学实验报告模板，正文 4 页）。
+`report/实验报告-项目1-NumPy图像编码器.docx`（深圳大学实验报告模板，正文 4 页）与同名 PDF
+（Word 导出，共 7 页：封面、评分表、正文 4 页、批阅页），两份内容一致。
