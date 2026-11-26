@@ -1,0 +1,6 @@
+norm min/max      : 1.0 1.0
+dtype/shape       : float32 (10, 512)
+B=1 max_abs diff  : 5.21540641784668e-08
+permuted max diff : 5.774199962615967e-08
+mixed modes shape : (3, 3, 224, 224) -> (3, 512) finite: True
+patch(1,3) diff   : 0.0

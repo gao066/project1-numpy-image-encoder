@@ -1,0 +1,9 @@
+# Large course assets: download from the course platform, do not commit
+weights/*.npz
+assets/reference_outputs.npz
+
+# Generated outputs
+/output_tokens.npz
+__pycache__/
+*.pyc
+~$*

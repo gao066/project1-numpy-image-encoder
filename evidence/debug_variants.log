@@ -1,0 +1,2 @@
+A missing transpose : max_abs=1.907e+00 mean_abs=9.009e-02 shape=(2, 50, 768)
+B float64 scale     : dtype=float64 (check.py requires float32) max_abs=6.663e-06
