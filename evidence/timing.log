@@ -1,0 +1,8 @@
+python       : 3.13.14
+numpy        : 2.5.3
+images       : (10, 3, 224, 224) float32
+output       : (10, 512) float32
+asset load   : 2.04 s
+forward #1   : 32.78 s (3.28 s/image)
+forward #2   : 32.32 s (3.23 s/image)
+forward mean : 32.55 s

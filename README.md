@@ -40,7 +40,11 @@ project1-numpy-image-encoder/
 ├── evidence/               # 本项目的验证证据
 │   ├── check_all.log       # check.py --stage all 的完整输出
 │   ├── extra_verify.py     # 额外鲁棒性测试脚本
-│   └── debug_variants.py   # 两类典型错误的对照实验脚本
+│   ├── extra_verify.log    # 上述脚本的输出
+│   ├── debug_variants.py   # 两类典型错误的对照实验脚本
+│   ├── debug_variants.log  # 两类错误的实测偏差
+│   ├── timing.py           # 十张图前向计时脚本
+│   └── timing.log          # 计时输出：32.8 s / 32.3 s
 ├── report/                 # 实验报告：Word 源文件与导出 PDF
 └── practice/               # 课程提供的练习材料（project1_exercises.pdf）
 ```
@@ -116,6 +120,21 @@ patch 投影无偏置；图像塔不含 LayerScale，只有两处残差。
 
 额外测试：单张与整批一致（5.2e-8）、乱序批一致（5.8e-8）、重复图像一致、
 奇数尺寸/灰度/RGBA 输入均可运行、输出 L2 范数恒为 1.000000、patch 顺序手工核对 diff=0。
+
+耗时（`evidence/timing.log`，Windows 11 / 纯 CPU / Python 3.13.14 / numpy 2.5.3）：
+10 张图前向两次分别为 32.78 s 与 32.32 s（约 3.3 s/张），与报告 4.2 节一致。
+
+## 复现证据
+
+```bash
+python check.py --stage all            # 分阶段数值检查（assets + 7 项）
+python evidence/extra_verify.py        # 批大小、乱序、重复、奇数尺寸/灰度/RGBA
+python evidence/debug_variants.py      # 拼头漏转置、float64 缩放因子的偏差
+python evidence/timing.py              # 十张图前向计时
+```
+
+上述脚本都以仓库根目录为基准定位文件，换机器只需放回 `weights/` 与 `assets/` 两个课程
+数据文件，不依赖绝对路径。
 
 ## 参考数据说明
 

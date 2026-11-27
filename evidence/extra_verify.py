@@ -1,9 +1,16 @@
 """Extra robustness evidence: batch sizes, orders, dtypes, image modes."""
+import sys
+import tempfile
 from pathlib import Path
+
 import numpy as np
 from PIL import Image
-from runtime import ROOT, load_weights, load_images, image_records
-from image_encoder import ImageEncoder
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from runtime import ROOT as ASSET_ROOT, load_weights, load_images, image_records  # noqa: E402
+from image_encoder import ImageEncoder  # noqa: E402
 
 enc = ImageEncoder(load_weights())
 images = load_images()
@@ -25,9 +32,8 @@ perm = enc(images[order])
 print('permuted max diff :', float(np.abs(perm - full[order]).max()))
 
 # 4) odd-size / grayscale / RGBA inputs through the supplied preprocessing
-tmp = Path('C:/Users/11593/WorkBuddy/2026-11-26-13-11-37/report_assets/tmp_inputs')
-tmp.mkdir(parents=True, exist_ok=True)
-src = Image.open(ROOT / 'assets' / 'images' / 'image_01.jpg').convert('RGB')
+tmp = Path(tempfile.mkdtemp(prefix='extra_verify_'))
+src = Image.open(ASSET_ROOT / 'assets' / 'images' / 'image_01.jpg').convert('RGB')
 src.resize((301, 457)).save(tmp / 'odd_size.png')
 src.convert('L').save(tmp / 'gray.png')
 src.convert('RGBA').save(tmp / 'alpha.png')
